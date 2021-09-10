@@ -1,4 +1,11 @@
 #!/bin/sh
+
+if [ -d "/project/app/.theia" ]; then
+  if [ ! -d "/project/.theia" ]; then
+    cp -R /project/app/.theia /project/.theia
+  fi
+fi
+
 export NG_CLI_ANALYTICS=ci
 echo 'export PATH="/projects/app/node_modules/.bin:$PATH"' >> ~/.bashrc
 export PATH="/projects/app/node_modules/.bin:$PATH"
