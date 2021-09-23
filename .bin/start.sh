@@ -7,7 +7,7 @@ if [ -d "/projects/app/.theia" ]; then
 fi
 
 export NG_CLI_ANALYTICS=ci
+export NODE_OPTIONS=--max_old_space_size=4096
 echo 'export PATH="/projects/app/node_modules/.bin:$PATH"' >> ~/.bashrc
 export PATH="/projects/app/node_modules/.bin:$PATH"
-npm install
-ng serve --host 0.0.0.0 --port 3000 --disable-host-check
+NODE_OPTIONS=--max_old_space_size=4096 npm ci && ng serve --host 0.0.0.0 --port 3000 --disable-host-check
