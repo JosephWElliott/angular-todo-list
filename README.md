@@ -4,7 +4,6 @@ Welcome to the **Angular To-Do List** project! This application is a simple, int
 
 ## Table of Contents
 
-- [Demo](#demo)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
@@ -14,10 +13,6 @@ Welcome to the **Angular To-Do List** project! This application is a simple, int
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
-
-## Demo
-
-Check out the live demo of the To-Do List application [here](https://your-demo-link.com).
 
 ## Features
 
