@@ -45,9 +45,11 @@ describe('AppComponent', () => {
   it('should not add an empty todo', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
+    spyOn(window, 'alert');
     app.newTodoName = '   ';
     app.addTodo();
     expect(app.todos.length).toBe(0);
+    expect(window.alert).toHaveBeenCalledWith('To-do name cannot be empty.');
   });
 
   it('should delete a todo', () => {
