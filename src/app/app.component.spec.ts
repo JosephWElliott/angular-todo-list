@@ -40,16 +40,16 @@ describe('AppComponent', () => {
     app.addTodo();
     expect(app.todos.length).toBe(1);
     expect(app.todos[0]).toBe('Test To-Do');
+    expect(app.errorMessage).toBe('');
   });
 
-  it('should not add an empty todo', () => {
+  it('should not add an empty todo and show error message', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    spyOn(window, 'alert');
     app.newTodoName = '   ';
     app.addTodo();
     expect(app.todos.length).toBe(0);
-    expect(window.alert).toHaveBeenCalledWith('To-do name cannot be empty.');
+    expect(app.errorMessage).toBe('To-do name cannot be empty.');
   });
 
   it('should delete a todo', () => {
