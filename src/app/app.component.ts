@@ -9,13 +9,15 @@ export class AppComponent {
   newTodoName: string = '';
   todos: string[] = [];
   title: string = 'practice';
+  errorMessage: string = '';
 
   addTodo() {
     if (this.newTodoName.trim() !== '') {
       this.todos.push(this.newTodoName);
       this.newTodoName = '';
+      this.errorMessage = '';  // Clear error message if any
     } else {
-      alert('To-do name cannot be empty.');
+      this.errorMessage = 'To-do name cannot be empty.';
     }
   }
 
