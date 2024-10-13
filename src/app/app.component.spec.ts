@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -7,6 +8,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        FormsModule
+      ]
     }).compileComponents();
   }));
 
@@ -26,6 +30,31 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('practice app is running!');
+    expect(compiled.querySelector('h1').textContent).toContain('Good Luck!');
+  });
+
+  it('should add a new todo', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.newTodoName = 'Test To-Do';
+    app.addTodo();
+    expect(app.todos.length).toBe(1);
+    expect(app.todos[0]).toBe('Test To-Do');
+  });
+
+  it('should not add an empty todo', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.newTodoName = '   ';
+    app.addTodo();
+    expect(app.todos.length).toBe(0);
+  });
+
+  it('should delete a todo', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.todos = ['Test To-Do'];
+    app.deleteTodo(0);
+    expect(app.todos.length).toBe(0);
   });
 });
