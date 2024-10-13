@@ -25,3 +25,20 @@ a:hover {
   color: #333;
   text-decoration: none;
 }
+
+.todo-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-todo-name {
+  margin-right: 10px;
+}
+
+.add-todo, .delete-todo {
+  cursor: pointer;
+}
