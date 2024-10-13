@@ -16,6 +16,7 @@
     <h3 class="todo-name">{{ todo }}</h3>
     <button class="delete-todo" (click)="deleteTodo(i)">Delete</button>
   </div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 </div>
 
 <!-- Add FormsModule to app.module.ts to use [(ngModel)] -->
