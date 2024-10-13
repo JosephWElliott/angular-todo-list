@@ -7,3 +7,15 @@
     </div>
   </div>
 </div>
+
+<div>
+  <input type="text" class="new-todo-name" [(ngModel)]="newTodoName" placeholder="Enter new to-do" />
+  <button class="add-todo" (click)="addTodo()">Add To-Do</button>
+
+  <div *ngFor="let todo of todos; let i = index" class="todo-item">
+    <h3 class="todo-name">{{ todo }}</h3>
+    <button class="delete-todo" (click)="deleteTodo(i)">Delete</button>
+  </div>
+</div>
+
+<!-- Add FormsModule to app.module.ts to use [(ngModel)] -->
