@@ -42,3 +42,8 @@ a:hover {
 .add-todo, .delete-todo {
   cursor: pointer;
 }
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
